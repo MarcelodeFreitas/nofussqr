@@ -2,6 +2,8 @@
 
 Free, customizable QR codes with no signup, no subscriptions, and no clutter.
 
+Use it here: [https://marcelodefreitas.github.io/nofussqr/](https://marcelodefreitas.github.io/nofussqr/)
+
 NoFussQR is a browser-only QR code generator built with React, TypeScript, and Vite. Everything runs locally in the user's browser: no backend, no accounts, no tracking, and no redirect service.
 
 ## Features
