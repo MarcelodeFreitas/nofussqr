@@ -1,0 +1,66 @@
+.zone {
+  border: 1.5px dashed var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--s4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    border-color var(--duration-fast) var(--ease),
+    background var(--duration-fast) var(--ease);
+  min-height: 72px;
+}
+
+.zone:hover, .zone.dragging {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.zone:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.zone.hasFile { cursor: default; }
+
+.hidden {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--s2);
+  color: var(--ink-faint);
+  font-size: var(--text-sm);
+}
+
+.preview {
+  display: flex;
+  align-items: center;
+  gap: var(--s3);
+}
+
+.thumb {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  object-fit: contain;
+  border: 1px solid var(--border);
+  background: var(--surface-sunk);
+}
+
+.clear {
+  font-size: var(--text-sm);
+  color: var(--danger);
+  padding: var(--s1) var(--s2);
+  border-radius: var(--radius-sm);
+  transition: background var(--duration-fast) var(--ease);
+}
+
+.clear:hover { background: var(--danger-soft); }

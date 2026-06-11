@@ -1,0 +1,36 @@
+# Existing test/scratch files
+.claude/
+CLAUDE.md
+__pycache__/
+generate_qr.py
+requirements.txt
+stylised_qr_generator.ipynb
+
+# Python
+*.py[cod]
+*$py.class
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+venv/
+env/
+
+# JavaScript / frontend builds
+node_modules/
+dist/
+build/
+.next/
+.vite/
+coverage/
+
+# Environment and local config
+.env
+.env.*
+!.env.example
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

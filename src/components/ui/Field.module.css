@@ -1,0 +1,41 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s1);
+}
+
+.field.row {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s3);
+}
+
+.field.row .labelRow {
+  flex-shrink: 0;
+}
+
+.field.row .control {
+  flex-shrink: 0;
+}
+
+.labelRow {
+  display: flex;
+  align-items: center;
+  gap: var(--s1);
+}
+
+.label {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--ink-soft);
+  line-height: var(--leading-tight);
+}
+
+.control {
+  width: 100%;
+}
+
+.field.row .control {
+  width: auto;
+}

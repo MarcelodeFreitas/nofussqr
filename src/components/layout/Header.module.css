@@ -1,0 +1,38 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--s3) var(--s5);
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  flex-shrink: 0;
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s3);
+}
+
+.wordmark {
+  font-family: var(--font-serif);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+
+.tagline {
+  font-size: var(--text-sm);
+  color: var(--ink-faint);
+}
+
+.ghLink {
+  display: flex;
+  align-items: center;
+  gap: var(--s1);
+}
+
+@media (max-width: 540px) {
+  .tagline { display: none; }
+}

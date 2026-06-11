@@ -1,0 +1,29 @@
+.wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.select {
+  appearance: none;
+  width: 100%;
+  padding: var(--s2) var(--s7) var(--s2) var(--s3);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  color: var(--ink);
+  cursor: pointer;
+  transition: border-color var(--duration-fast) var(--ease);
+}
+
+.select:hover { border-color: var(--border-strong); }
+.select:focus-visible { border-color: var(--accent); outline: none; box-shadow: 0 0 0 3px var(--focus-ring); }
+
+.chevron {
+  position: absolute;
+  right: var(--s3);
+  color: var(--ink-faint);
+  pointer-events: none;
+  display: flex;
+}

@@ -1,0 +1,21 @@
+.canvas {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+}
+
+.qr svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}

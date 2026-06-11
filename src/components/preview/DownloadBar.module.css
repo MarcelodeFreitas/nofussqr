@@ -1,0 +1,19 @@
+.bar {
+  display: flex;
+  align-items: center;
+  gap: var(--s3);
+  width: 100%;
+  max-width: 340px;
+}
+
+.controls {
+  display: flex;
+  gap: var(--s2);
+  flex: 1;
+  min-width: 0;
+}
+
+.controls > * {
+  flex: 1;
+  min-width: 0;
+}

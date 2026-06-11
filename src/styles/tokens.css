@@ -1,0 +1,87 @@
+:root {
+  /* Color — warm paper + ink */
+  --bg: #faf9f6;
+  --surface: #ffffff;
+  --surface-sunk: #f3f1ec;
+  --surface-hover: #edeae3;
+  --border: #e7e3da;
+  --border-strong: #d8d2c6;
+  --ink: #1a1915;
+  --ink-soft: #4a463d;
+  --ink-faint: #8a8478;
+
+  /* Accent — clay/terracotta */
+  --accent: #c9613f;
+  --accent-hover: #b5532f;
+  --accent-soft: #f3e3dc;
+  --accent-text: #8a3520;
+
+  --focus-ring: rgba(201, 97, 63, 0.35);
+  --danger: #b23b3b;
+  --danger-soft: #fde8e8;
+
+  /* Typography */
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', 'Cascadia Code', monospace;
+
+  --text-xs: 0.6875rem;
+  --text-sm: 0.8125rem;
+  --text-base: 0.9375rem;
+  --text-lg: 1.0625rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --leading: 1.6;
+  --leading-tight: 1.25;
+
+  /* Spacing — 4px base scale */
+  --s0: 2px;
+  --s1: 4px;
+  --s2: 8px;
+  --s3: 12px;
+  --s4: 16px;
+  --s5: 20px;
+  --s6: 24px;
+  --s7: 32px;
+  --s8: 40px;
+  --s9: 48px;
+  --s10: 64px;
+
+  /* Radius */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-pill: 999px;
+
+  /* Elevation */
+  --shadow-xs: 0 1px 2px rgba(26, 25, 21, 0.04);
+  --shadow-sm: 0 1px 3px rgba(26, 25, 21, 0.06), 0 1px 2px rgba(26, 25, 21, 0.04);
+  --shadow-md: 0 4px 12px rgba(26, 25, 21, 0.07), 0 1px 3px rgba(26, 25, 21, 0.05);
+
+  /* Transitions */
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 100ms;
+  --duration-base: 160ms;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1a1915;
+    --surface: #22211d;
+    --surface-sunk: #1e1d19;
+    --surface-hover: #2a2924;
+    --border: #333028;
+    --border-strong: #3d3a30;
+    --ink: #f0ede6;
+    --ink-soft: #b8b3a8;
+    --ink-faint: #6b6760;
+    --accent: #d97c58;
+    --accent-hover: #e08a68;
+    --accent-soft: #3d2518;
+    --accent-text: #e8a887;
+    --focus-ring: rgba(217, 124, 88, 0.35);
+  }
+}
