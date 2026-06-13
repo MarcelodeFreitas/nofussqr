@@ -27,21 +27,18 @@
 }
 
 .bubble {
-  position: absolute;
-  bottom: calc(100% + var(--s2));
-  left: 50%;
-  transform: translateX(-50%);
+  position: fixed;
+  transform: translate(-50%, -100%);
   background: var(--ink);
   color: var(--bg);
   font-size: var(--text-xs);
   line-height: var(--leading);
   padding: var(--s1) var(--s3);
   border-radius: var(--radius-sm);
-  white-space: nowrap;
   max-width: 240px;
   white-space: normal;
   text-align: center;
-  z-index: 100;
+  z-index: 9999;
   pointer-events: none;
   box-shadow: var(--shadow-md);
 }

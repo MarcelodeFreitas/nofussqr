@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import styles from './Tooltip.module.css';
 
 interface TooltipProps {
@@ -7,29 +8,43 @@ interface TooltipProps {
 
 export function Tooltip({ text }: TooltipProps) {
   const [visible, setVisible] = useState(false);
+  const [pos, setPos] = useState({ top: 0, left: 0 });
+  const triggerRef = useRef<HTMLButtonElement>(null);
+
+  const show = () => {
+    const r = triggerRef.current?.getBoundingClientRect();
+    if (r) setPos({ top: r.top - 8, left: r.left + r.width / 2 });
+    setVisible(true);
+  };
+
+  const hide = () => setVisible(false);
 
   return (
-    <span
-      className={styles.wrap}
-      onMouseEnter={() => setVisible(true)}
-      onMouseLeave={() => setVisible(false)}
-      onFocus={() => setVisible(true)}
-      onBlur={() => setVisible(false)}
-    >
+    <span className={styles.wrap}>
       <button
+        ref={triggerRef}
         type="button"
         className={styles.trigger}
         aria-label="More info"
-        aria-describedby={visible ? 'tooltip-bubble' : undefined}
+        onMouseEnter={show}
+        onMouseLeave={hide}
+        onFocus={show}
+        onBlur={hide}
         tabIndex={0}
       >
         ?
       </button>
-      {visible && (
-        <span id="tooltip-bubble" role="tooltip" className={styles.bubble}>
-          {text}
-        </span>
-      )}
+      {visible &&
+        createPortal(
+          <span
+            role="tooltip"
+            className={styles.bubble}
+            style={{ top: pos.top, left: pos.left }}
+          >
+            {text}
+          </span>,
+          document.body,
+        )}
     </span>
   );
 }

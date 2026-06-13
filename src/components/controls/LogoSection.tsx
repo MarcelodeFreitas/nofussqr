@@ -27,6 +27,20 @@ export function LogoSection() {
         />
 
         {logo.dataUrl && (
+          <p style={{
+            fontSize: 'var(--text-xs)',
+            color: 'var(--ink-soft)',
+            background: 'var(--accent-soft)',
+            border: '1px solid var(--accent)',
+            borderRadius: 'var(--radius-sm)',
+            padding: 'var(--s2) var(--s3)',
+            lineHeight: 'var(--leading)',
+          }}>
+            Error correction set to H — maximum resilience for QR codes with a logo.
+          </p>
+        )}
+
+        {logo.dataUrl && (
           <>
             <Field label="Logo size" htmlFor="logo-size">
               <Slider

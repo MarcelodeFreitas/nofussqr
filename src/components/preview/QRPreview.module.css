@@ -19,3 +19,14 @@
   max-width: 100%;
   height: auto;
 }
+
+@media (max-width: 860px) {
+  .canvas {
+    flex-shrink: 1;
+  }
+
+  .qr svg {
+    max-height: calc(50vh - 108px);
+    width: auto;
+  }
+}

@@ -51,7 +51,23 @@ export function QRConfigProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const updateLogo = useCallback((patch: Partial<LogoConfig>) => {
-    setConfig((prev) => ({ ...prev, logo: { ...prev.logo, ...patch } }));
+    setConfig((prev) => {
+      const base = { ...prev, logo: { ...prev.logo, ...patch } };
+      const next =
+        patch.dataUrl != null &&
+        (prev.errorCorrectionLevel === 'L' || prev.errorCorrectionLevel === 'M')
+          ? { ...base, errorCorrectionLevel: 'H' as const }
+          : base;
+      try {
+        localStorage.setItem(
+          'nofussqr-config',
+          JSON.stringify({ ...next, logo: { ...next.logo, dataUrl: null } }),
+        );
+      } catch {
+        // storage unavailable
+      }
+      return next;
+    });
   }, []);
 
   const reset = useCallback(() => {

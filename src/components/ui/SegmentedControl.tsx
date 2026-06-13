@@ -4,6 +4,7 @@ interface Option<T extends string> {
   value: T;
   label: string;
   title?: string;
+  disabled?: boolean;
 }
 
 interface SegmentedControlProps<T extends string> {
@@ -12,6 +13,7 @@ interface SegmentedControlProps<T extends string> {
   onChange: (value: T) => void;
   ariaLabel: string;
   wrap?: boolean;
+  cols?: number;
 }
 
 export function SegmentedControl<T extends string>({
@@ -20,12 +22,14 @@ export function SegmentedControl<T extends string>({
   onChange,
   ariaLabel,
   wrap,
+  cols,
 }: SegmentedControlProps<T>) {
   return (
     <div
       role="radiogroup"
       aria-label={ariaLabel}
-      className={`${styles.group} ${wrap ? styles.wrap : ''}`}
+      className={`${styles.group} ${wrap && !cols ? styles.wrap : ''}`}
+      style={cols ? { display: 'grid', gridTemplateColumns: `repeat(${cols}, 1fr)` } : undefined}
     >
       {options.map((opt) => (
         <button
@@ -33,8 +37,9 @@ export function SegmentedControl<T extends string>({
           type="button"
           role="radio"
           aria-checked={opt.value === value}
-          className={`${styles.btn} ${opt.value === value ? styles.active : ''}`}
-          onClick={() => onChange(opt.value)}
+          className={`${styles.btn} ${opt.value === value ? styles.active : ''} ${opt.disabled ? styles.disabled : ''}`}
+          onClick={() => !opt.disabled && onChange(opt.value)}
+          disabled={opt.disabled}
           title={opt.title ?? opt.label}
         >
           {opt.label}

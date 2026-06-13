@@ -13,7 +13,8 @@
 
 .btn {
   flex: 1;
-  padding: var(--s1) var(--s2);
+  min-height: 44px;
+  padding: var(--s2) var(--s2);
   border-radius: calc(var(--radius-md) - 2px);
   font-size: var(--text-sm);
   font-weight: 500;
@@ -33,7 +34,13 @@
 
 .btn.active {
   background: var(--surface);
-  color: var(--ink);
-  box-shadow: var(--shadow-xs);
+  color: var(--accent);
+  box-shadow: var(--shadow-sm);
   font-weight: 600;
+}
+
+.btn.disabled,
+.btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
 }

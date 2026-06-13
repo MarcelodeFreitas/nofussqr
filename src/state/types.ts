@@ -9,7 +9,7 @@ export type DotType =
   | 'extra-rounded';
 
 export type CornerSquareType = 'square' | 'extra-rounded' | 'dot';
-export type CornerDotType = 'square' | 'dot';
+export type CornerDotType = 'square' | 'dot' | 'rounded' | 'extra-rounded';
 export type GradientType = 'linear' | 'radial';
 export type ExportFormat = 'svg' | 'png' | 'jpeg' | 'webp';
 export type QRShape = 'square' | 'circle';
@@ -41,6 +41,7 @@ export interface QRConfig {
   bgTransparent: boolean;
   gradient: GradientConfig;
   logo: LogoConfig;
+  dotRoundSize: boolean;
   exportFormat: ExportFormat;
   exportSize: number;
 }

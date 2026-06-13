@@ -11,7 +11,9 @@ const CORNER_SQUARE_OPTIONS: { value: CornerSquareType; label: string }[] = [
 
 const CORNER_DOT_OPTIONS: { value: CornerDotType; label: string }[] = [
   { value: 'square', label: 'Square' },
+  { value: 'rounded', label: 'Rounded' },
   { value: 'dot', label: 'Dot' },
+  { value: 'extra-rounded', label: 'Soft' },
 ];
 
 export function CornersSection() {
