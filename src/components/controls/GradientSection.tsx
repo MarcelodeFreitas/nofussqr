@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import { useQRConfig } from '../../state/QRConfigContext';
 import { Toggle } from '../ui/Toggle';
 import { ColorInput } from '../ui/ColorInput';
@@ -14,9 +15,15 @@ const GRADIENT_TYPE_OPTIONS: { value: GradientType; label: string }[] = [
 export function GradientSection() {
   const { config, updateGradient } = useQRConfig();
   const g = config.gradient;
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!g.enabled) return;
+    sectionRef.current?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  }, [g.enabled]);
 
   return (
-    <div className="section-card">
+    <div className="section-card" ref={sectionRef}>
       <div className="section-header">Gradient</div>
       <div className="section-body">
         <Field label="Enable gradient" row>
@@ -48,7 +55,7 @@ export function GradientSection() {
                   step={5}
                   value={g.rotation}
                   onChange={(v) => updateGradient({ rotation: v })}
-                  format={(v) => `${v}°`}
+                  format={(v) => `${v} deg`}
                 />
               </Field>
             )}
