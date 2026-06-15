@@ -7,19 +7,7 @@ html {
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
-}
-
-@media (min-width: 861px) {
-  html, body {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-
-  #root {
-    position: fixed;
-    inset: 0;
-  }
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -34,10 +22,9 @@ body {
 }
 
 #root {
-  display: grid;
-  grid-template-rows: auto minmax(0, 1fr) auto;
+  display: flex;
+  flex-direction: column;
   min-height: 100dvh;
-  overflow: hidden;
 }
 
 img, svg { display: block; max-width: 100%; }
@@ -68,31 +55,28 @@ a:hover { text-decoration: underline; }
   flex: 1;
   display: grid;
   grid-template-columns: 420px 1fr;
-  grid-template-rows: 1fr;
   grid-template-areas: 'controls preview';
   gap: 0;
-  min-height: 0;
-  height: 100%;
-  overflow: hidden;
+  background: linear-gradient(to right, transparent 420px, var(--surface-sunk) 420px);
 }
 
 .app-controls {
   grid-area: controls;
-  overflow-y: auto;
-  min-height: 0;
+  min-height: calc(100dvh - var(--header-h));
   border-right: 1px solid var(--border);
   padding: var(--s6) var(--s5);
   display: flex;
   flex-direction: column;
   gap: var(--s4);
-  scrollbar-gutter: stable;
 }
 
 .app-preview {
   grid-area: preview;
-  height: 100%;
+  position: sticky;
+  top: var(--header-h);
+  height: calc(100dvh - var(--header-h));
+  align-self: start;
   min-width: 0;
-  min-height: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -177,22 +161,13 @@ a:hover { text-decoration: underline; }
 
 /* ── Responsive ─────────────────────────────────── */
 @media (max-width: 860px) {
-  #root {
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    min-height: 100dvh;
-    overflow: visible;
-  }
-
   .app-layout {
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
     grid-template-areas:
       'preview'
       'controls';
-    overflow: visible;
-    height: auto;
+    align-items: stretch;
   }
 
   .app-preview {
@@ -212,8 +187,6 @@ a:hover { text-decoration: underline; }
     border-right: none;
     border-top: 1px solid var(--border);
     padding: var(--s5) var(--s4);
-    overflow-y: visible;
-    height: auto;
   }
 }
 

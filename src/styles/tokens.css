@@ -62,7 +62,7 @@
   --shadow-md: 0 4px 12px rgba(26, 25, 21, 0.07), 0 1px 3px rgba(26, 25, 21, 0.05);
 
   /* Layout */
-  --header-h: 57px;
+  --header-h: 69px;
 
   /* Transitions */
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
