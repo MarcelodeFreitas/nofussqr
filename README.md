@@ -11,7 +11,7 @@ NoFussQR is a browser-only QR code generator built with React, TypeScript, and V
 - Encode URLs or plain text
 - Live QR preview
 - Error correction controls
-- Square or circular QR shape
+- Square or circular QR frame
 - Custom dot and corner styles
 - Solid colors, transparent background, or gradients
 - Optional center logo upload

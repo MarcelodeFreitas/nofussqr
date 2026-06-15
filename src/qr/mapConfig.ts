@@ -3,14 +3,15 @@ import type { QRConfig } from '../state/types';
 
 export function mapConfigToOptions(c: QRConfig, overrideSize?: number): Options {
   const size = overrideSize ?? 320;
+  const margin = c.shape === 'circle' ? Math.ceil(size * 0.15) : 10;
 
   return {
     width: size,
     height: size,
     type: 'svg',
-    shape: c.shape,
+    shape: 'square',
     data: c.data || ' ',
-    margin: 10,
+    margin,
     qrOptions: {
       errorCorrectionLevel: c.errorCorrectionLevel,
       mode: 'Byte',
@@ -39,6 +40,7 @@ export function mapConfigToOptions(c: QRConfig, overrideSize?: number): Options 
       color: c.fgColor,
     },
     backgroundOptions: {
+      round: c.shape === 'circle' ? 1 : 0,
       color: c.bgTransparent ? 'rgba(0,0,0,0)' : c.bgColor,
     },
     image: c.logo.dataUrl ?? undefined,

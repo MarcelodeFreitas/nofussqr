@@ -34,7 +34,7 @@ export function DotsSection() {
             cols={3}
           />
         </Field>
-        <Field label="Overall shape">
+        <Field label="Frame shape">
           <SegmentedControl
             options={SHAPE_OPTIONS}
             value={config.shape}
