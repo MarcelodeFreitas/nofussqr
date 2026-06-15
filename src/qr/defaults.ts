@@ -23,7 +23,6 @@ export const DEFAULT_CONFIG: QRConfig = {
     margin: 4,
     hideBackgroundDots: true,
   },
-  dotRoundSize: false,
   exportFormat: 'svg',
   exportSize: 1024,
 };

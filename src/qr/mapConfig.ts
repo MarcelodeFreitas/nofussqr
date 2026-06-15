@@ -18,7 +18,7 @@ export function mapConfigToOptions(c: QRConfig, overrideSize?: number): Options 
     },
     dotsOptions: {
       type: c.dotType,
-      roundSize: c.dotRoundSize,
+      roundSize: true,
       color: c.gradient.enabled ? undefined : c.fgColor,
       gradient: c.gradient.enabled
         ? {

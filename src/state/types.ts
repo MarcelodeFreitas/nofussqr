@@ -41,7 +41,6 @@ export interface QRConfig {
   bgTransparent: boolean;
   gradient: GradientConfig;
   logo: LogoConfig;
-  dotRoundSize: boolean;
   exportFormat: ExportFormat;
   exportSize: number;
 }

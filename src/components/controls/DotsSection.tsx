@@ -1,6 +1,5 @@
 import { useQRConfig } from '../../state/QRConfigContext';
 import { SegmentedControl } from '../ui/SegmentedControl';
-import { Toggle } from '../ui/Toggle';
 import { Field } from '../ui/Field';
 import type { DotType, QRShape } from '../../state/types';
 
@@ -40,12 +39,6 @@ export function DotsSection() {
             value={config.shape}
             onChange={(v) => update({ shape: v })}
             ariaLabel="QR code shape"
-          />
-        </Field>
-        <Field label="Round corners" row>
-          <Toggle
-            checked={config.dotRoundSize}
-            onChange={(v) => update({ dotRoundSize: v })}
           />
         </Field>
       </div>
